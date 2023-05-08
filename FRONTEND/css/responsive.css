@@ -1,0 +1,147 @@
+/* Button - Nav */
+@media (min-width: 768px) {
+
+}
+
+/* Hero - Video  */
+@media (min-aspect-ratio: 16/9) {
+  .hero-video {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .hero-video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+/*  Hero Video - Scroll Button Animation */
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+/*  Tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #facebook-icon, 
+  #instagram-icon,
+  #nav-menu-icon {
+    width: 50px;
+    height: 50px;
+}
+  h1 {
+    font-size: 3rem;
+  }
+  .hero-content h3 {
+    font-size: 5rem;
+  }
+  .hero {
+    height: 90vh;
+  }
+  .slides img {
+    width: 70%;
+    height: 70%;
+  }
+
+  .product-name-donut,
+  .product-price-donut {
+    font-size: 2rem;
+  }
+  .product-description-donut {
+    font-size: 1.7rem;
+  }
+
+  .menu-container {
+    max-width: 80%;
+    margin: auto;
+  }
+  footer {
+    max-width: 90%;
+    margin: auto;
+  }
+  .btn-nav:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 1px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+  }
+  
+}
+
+/* Desktop - Max 1924px */
+@media screen and (min-width: 1025px) {
+  #facebook-icon, 
+  #instagram-icon,
+  #nav-menu-icon {
+    width: 60px;
+    height: 60px;
+}
+  h1 {
+    font-size: 4rem;
+  }
+  .hero-content h3 {
+    font-size: 9rem;
+  }
+  .hero {
+    height: 90vh;
+  }
+  .slides img {
+    width: 100%;
+    height: 100%;
+  }
+  .dot {
+    height: 2rem;
+    width: 2rem;
+  }
+  .product-name-donut,
+  .product-price-donut {
+    font-size: 2.4rem;
+  }
+  .product-description-donut {
+    font-size: 2rem;
+  }
+  .menu-section {
+    margin: 5% 0;
+  }
+  .menu-container {
+    max-width: 60%;
+    margin: auto;
+  }
+  footer {
+    max-width: 80%;
+    margin: auto;
+  }
+  .btn-nav:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);  
+  }
+}
+
+

@@ -1,0 +1,264 @@
+/*----------------------------------------------------
+@File: Specific CSS Styles
+@Author: Maria Repolust
+---------------------------------------------------- */
+
+/*=====================================================================
+
+Table of Content:
+01/ Img Icons
+02/ Nav
+03/ Hero
+04/ Slider
+05/ Menu
+06/ Footer
+
+=====================================================================*/
+
+/*  01 / Img Icons - Start */
+#facebook-icon, 
+#instagram-icon {
+  width: 40px;
+  height: 40px;
+}
+#facebook-icon,
+#instagram-icon {
+  margin-right: 1em;
+}
+/* Img Icons - End */
+/* 02 / Nav - Start */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4%;
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  height: 12%;
+  padding: 2rem;
+}
+.nav-content {
+  text-align: center;
+}
+h1 {
+  font-size: 2rem;
+  font-family: "Anton";
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  /* margin-left: -30%; */
+}
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Anton";
+  padding: 30px;
+  margin: 50px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+}
+.btn-nav {
+  background-color: #d2d431;
+  border: 0 solid #E5E7EB;
+  box-sizing: border-box;
+  color: #000000;
+  display: flex;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: .75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-nav:focus {
+  outline: 0;
+}
+
+.btn-nav:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+}
+
+.btn-nav:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+@media (min-width: 768px) {
+  .btn-nav {
+    padding: .75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* Nav - Ende */
+/* 03 / Hero Section */
+.hero {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+  align-content: center;
+}
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  align-content: center;
+  color: #fff;
+  z-index: 1;
+}
+.hero-content h3 {
+  font-size: 4rem;
+  font-family: var(--font-anton);
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  margin-bottom: 2rem;
+  color: transparent;
+  -webkit-text-stroke: 0.1px var(--color-white);
+}
+section{
+  height: 500px;
+  width: 100%;
+  display: table;
+}
+.scroll-down {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+  margin: 40px auto;
+  position: relative;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--color-white);
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+.scroll-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border: 2px solid var(--color-white);
+    border-width: 0px 0 2px 2px;
+}
+/* Hero - End */
+/* 04 / Slider - Begin */
+.slider {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin-bottom: 5%;
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slides img {
+  width: 50%;
+  height: 45%;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  color: #0c0a0a;
+}
+.dot {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background-color: #18d1ff;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.dot.active {
+  background-color: #e40ce4;
+}
+/* Slider - End */
+/* 05 / Menu - Begin */
+.menu-area {
+  margin: auto;
+  max-width: 100%;
+  background-color: #99e9fd93;
+  height: 120px;
+  padding: 2.5rem;
+}
+.menu-product-donut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+.menu-product-description {
+  display: flex;
+  height: 30px;
+  align-items: center;
+  font-style: italic;
+}
+/* Menu - End */
+/* 06 / Footer - Begin */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  margin:  2rem auto;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+}
+#footer-span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+/* Footer - End */
+
+
+
+
+
