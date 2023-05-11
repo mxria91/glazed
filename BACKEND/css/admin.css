@@ -1,0 +1,132 @@
+/* HEADER BEGIN */
+body {
+    background: linear-gradient(rgba(47, 186, 241, 0.5), rgba(235, 122, 250, 0.5));
+}
+h1 {
+    font-size: 13rem;
+    font-family: "Anton";
+    font-weight: lighter;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    color: transparent;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    background: url(../root/assets/img/menu-classic-background.png);
+    background-clip: unset;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 4px var(--color-black);
+    background-position: 0 0;
+    animation: back 8s linear infinite;
+}
+@keyframes back {
+    100% {
+      background-position: 868px 0;
+    }
+}
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    font-family: "Archivo";
+    font-weight: lighter;
+    padding: 30px 10px;
+    margin: 10px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+/* HEADER END */
+
+/* LOGIN FORM BEGIN */
+.form-box {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 600px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: var(--color-white);
+    border-radius: 30px;
+    -webkit-box-shadow: 35px 5px 30px 20px rgb(55, 161, 194);
+    -moz-box-shadow: 35px 5px 30px 20px rgba(201, 242, 255, 0.945);
+    box-shadow: 15px 5px 30px 20px rgba(58, 63, 65, 0.103);
+    height: auto;
+}
+.form-box .form-input {
+    position: relative;
+}
+.form-box .form-input input {
+    width: 100%;
+    padding: 25px 0;
+    margin-bottom: 30px;
+    color: #000000;
+    border: none;
+    border-bottom: 1px solid #15263380;   
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+}
+.form-box .form-input label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Archivo';
+    font-weight: 500;
+    padding: 10px 0;
+    pointer-events: none;
+    font-size: medium;
+}
+
+/* Button */
+.btn-nav {
+    margin: 40px auto;    
+    text-transform: uppercase;
+    background-color: #d2d431;
+    border: 0 solid #E5E7EB;
+    color: #000000;
+    display: flex;
+    font-family: 'Anton';
+    letter-spacing: 10px;
+    font-size: 1rem;
+    font-weight: lighter;
+    justify-content: center;
+    line-height: 1.75rem;
+    padding: 1rem 2rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none #000000 solid;
+    width: 45%;
+    max-width: 460px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+.btn-nav:focus {
+    outline: 0;
+}
+.btn-nav:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+}
+.btn-nav:hover:after {
+    bottom: 2px;
+    left: 2px;
+}
+@media (min-width: 768px) {
+  .btn-nav {
+    padding: .75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
+.hidden-message {
+    visibility: hidden;
+}
+/* LOGIN FORM END */
