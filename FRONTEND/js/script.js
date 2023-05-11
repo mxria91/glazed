@@ -70,7 +70,7 @@ window.onload = function () {
   });
 
 
-  const slideInterval = setInterval(nextSlide, 2000); // Change slide every 2 seconds
+  const slideInterval = setInterval(nextSlide, 6000); // Change slide every 2 seconds
 };
 
 
