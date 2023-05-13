@@ -2,6 +2,7 @@
 <?php
 include "functions.php";
 
+// ANMELDEDATEN ÜBERPRÜFUNG
 if (!empty($_POST)) {
     // Validation Check
     if( empty($_POST["user_name"]) || empty($_POST["user_pw"] )) {
@@ -55,6 +56,7 @@ if (!empty($_POST)) {
     <div class="login-box" >
         <h2>Administration</h2>
         <div class="form-box">
+            <!-- FORM LOGIN -->
             <form action="" method="post">
                 <div class="form-input">
                     <label for="user_name">USER </label><br>
@@ -65,11 +67,13 @@ if (!empty($_POST)) {
                     <input type="password" name="user_pw" id="user_pw" required>
                 </div>
                 <div>
-                    <button type="submit" class="btn-nav" id="btn-login">
+                    <button type="submit" name="record" class="btn-nav" id="btn-login">
                         Login
                     </button>
                 </div>
-                <div class="hidden-message">
+                <div class="log-message">
+                    <p class="error"><?php echo @$record_error?></p>
+                    <p class="success"><?php echo @$record_success?></p>
                     <?php
                          if ( !empty($error) ) {
                             echo "<p>{$error}</p>";

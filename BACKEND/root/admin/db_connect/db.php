@@ -5,17 +5,13 @@ $username = "username";
 $password = "password";
 $dbname = "glazed";
 
-// Verbindung aufbauen
+// DATABASE CONNECTION
 $connection = new mysqli($servername, $username, $password, $dbname);
-// Verbindungsüberprüfung
+// DATABASE CONNECTION CHECK
 if($connection->connect_error) {
     die("Verbindung fehlgeschlagen." . $connection->connect_error);
 }
-// 
-
-
-
-// Initiate connection to data base
+// INITIATE DATABASE CONNECTION
 $db_connect = mysqli_connect("localhost", "root", "", "glazed");
 mysqli_set_charset($db_connect, "utf8");
 ?>
