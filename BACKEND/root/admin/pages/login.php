@@ -3,24 +3,23 @@
 include "functions.php";
 
 // ANMELDEDATEN ÜBERPRÜFUNG
-if (!empty($_POST)) {
+if (isset($_POST)) {
     // Validation Check
     if( empty($_POST["user_name"]) || empty($_POST["user_pw"] )) {
         $error = "Oops, da war wohl was falsch! Probiere es nochmal.";
     } else {
     $sql_user_name = escape($_POST["user_name"]);
-    $result = query(" SELECT * FROM admin WHERE user_name='{$sql_user_name}'  ");
-    $row = mysqli_fetch_assoc($result);
+    $result_login = query(" SELECT * FROM admin WHERE user_name='{$sql_user_name}'  ");
+    $row = mysqli_fetch_assoc($result_login);
     
         // Password Check
         if($row) {
             if (password_verify($_POST["user_pw"], $row["user_pw"])) {
                 $_SESSION["active_login"] = true;
-                $_SESSION["user_id"] = $row["user_id"];
                 $_SESSION["user_name"] = $row["user_name"];
 
                 query("UPDATE `admin` SET `user_last_login`=NOW() WHERE user_name = '{$row['user_name']}' ");
-                header("Location: admin.php");
+                header("Location: index.php");
                 exit;
             } else {
                 $error = "Oops, da war wohl was falsch! Probiere es nochmal.";
@@ -74,11 +73,11 @@ if (!empty($_POST)) {
                 <div class="log-message">
                     <p class="error"><?php echo @$record_error?></p>
                     <p class="success"><?php echo @$record_success?></p>
-                    <?php
+                    <!-- <?php
                          if ( !empty($error) ) {
                             echo "<p>{$error}</p>";
                         }
-                    ?>
+                    ?> -->
                 </div>
     </div>
 </body>

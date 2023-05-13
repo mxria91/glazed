@@ -8,7 +8,7 @@ activeUser();
 include "header.php";
 ?>
 
-<h2>Glaze Up!</h2>
+<h2>Glaze Administration</h2>
 
 <?php
 // Footer

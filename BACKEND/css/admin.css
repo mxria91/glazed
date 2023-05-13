@@ -1,6 +1,7 @@
 /* HEADER BEGIN */
 body {
-    background: linear-gradient(rgba(47, 186, 241, 0.5), rgba(235, 122, 250, 0.5));
+    background: linear-gradient(rgba(86, 200, 245, 0.5), rgba(235, 122, 250, 0.5));
+    height: 100vh;
 }
 h1 {
     font-size: 13rem;
@@ -26,6 +27,7 @@ h1 {
 }
 h2 {
     font-size: 3rem;
+    font-family: 'Anton';
     text-align: center;
     font-family: "Archivo";
     font-weight: lighter;
@@ -35,12 +37,36 @@ h2 {
     text-transform: uppercase;
     color: var(--color-white);
 }
+
+.nav-link li {
+    display: inline-block;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+}
+.nav-link li a {
+    color: var(--color-white);
+    transition: all .5s ease 0s;
+}
+.nav-link li a:hover {
+    color: var(--color-hotpink);
+}
+.nav-link li a:active {
+    color: var(--color-hotpink);
+}
 /* HEADER END */
+
+#header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    margin: 1rem;
+}
 
 /* LOGIN FORM BEGIN */
 .form-box {
     position: absolute;
-    top: 70%;
+    top: 80%;
     left: 50%;
     width: 600px;
     padding: 40px;
@@ -128,3 +154,19 @@ h2 {
 }
 
 /* LOGIN FORM END */
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    margin:  2rem auto;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+  }
+  #footer-span {
+    font-size: 1rem;
+    font-weight: 400;
+  }
