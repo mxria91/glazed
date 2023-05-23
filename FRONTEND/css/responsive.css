@@ -1,8 +1,3 @@
-/* Button - Nav */
-@media (min-width: 768px) {
-
-}
-
 /* Hero - Video  */
 @media (min-aspect-ratio: 16/9) {
   .hero-video {
@@ -17,7 +12,8 @@
   }
 }
 
-/*  Hero Video - Scroll Button Animation */
+
+/*  ANIMATIONS */
 @keyframes bounce {
   0%,
   100%,
@@ -40,6 +36,7 @@
   }
 }
 
+/* RESPONSIVE QUERIES */
 /*  Tablet */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   #facebook-icon, 
@@ -78,16 +75,7 @@
     max-width: 90%;
     margin: auto;
   }
-  .btn-nav:after {
-    content: '';
-    position: absolute;
-    border: 1px solid #000000;
-    bottom: 4px;
-    left: 1px;
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
-  }
-  
+ 
 }
 
 /* Desktop - Max 1924px */
@@ -132,15 +120,6 @@
   footer {
     max-width: 80%;
     margin: auto;
-  }
-  .btn-nav:after {
-    content: '';
-    position: absolute;
-    border: 1px solid #000000;
-    bottom: 4px;
-    left: 4px;
-    width: calc(100% - 1px);
-    height: calc(100% - 1px);  
   }
 }
 

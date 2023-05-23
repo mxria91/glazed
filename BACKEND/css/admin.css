@@ -1,82 +1,136 @@
-/* HEADER BEGIN */
-body {
-    background: linear-gradient(rgba(86, 200, 245, 0.5), rgba(235, 122, 250, 0.5));
-    height: 100vh;
-}
-h1 {
-    font-size: 13rem;
-    font-family: "Anton";
-    font-weight: lighter;
-    letter-spacing: 15px;
-    text-transform: uppercase;
-    color: transparent;
-    padding: 20px;
-    margin: 10px;
-    text-align: center;
-    background: url(../root/assets/img/menu-classic-background.png);
-    background-clip: unset;
-    -webkit-background-clip: text;
-    -webkit-text-stroke: 4px var(--color-black);
-    background-position: 0 0;
-    animation: back 8s linear infinite;
-}
-@keyframes back {
-    100% {
-      background-position: 868px 0;
-    }
-}
-h2 {
-    font-size: 3rem;
-    font-family: 'Anton';
-    text-align: center;
-    font-family: "Archivo";
-    font-weight: lighter;
-    padding: 30px 10px;
-    margin: 10px;
-    letter-spacing: 10px;
-    text-transform: uppercase;
-    color: var(--color-white);
+/* GENERAL SETTINGS  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: normal;
+  font-family: 'roboto';
+  color: var(--color-dark);
 }
 
+:root {
+  --color-hotpink: #e43da1ef;
+  --color-white: #fff;
+  --color-button: #d2d431;
+  --color-black: #11101038;
+  --color-dark: #000;
+}
+html, 
+body {
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: smooth;
+  font-family: 'roboto';
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url(../root/assets/font/Roboto/Roboto-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'roboto';
+    src: url(../root/assets/font/Roboto/Roboto-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'roboto';
+    src: url(../root/assets/font/Roboto/Roboto-Medium.ttf);
+    font-weight: 500;
+}
+h1 {
+  font-size: 13rem;
+  font-family: 'roboto';
+  font-weight: bold;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  color: transparent;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  background: url(../root/assets/img/menu-classic-background.png);
+  background-clip: unset;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 4px var(--color-black);
+  background-position: 0 0;
+  animation: back 8s linear infinite;
+}
+@keyframes back {
+  100% {
+    background-position: 868px 0;
+  }
+}
+h2 {
+  font-size: 3rem;
+  font-weight: lighter;
+  padding: 30px 20px;
+  margin: 20px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-family: 'roboto';
+}
+h3 {
+  font-size: 2rem;
+  font-family: 'roboto';
+  padding: 30px 10px;
+  margin: 20px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+ul li,
+span {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* HEADER BEGIN */
+header {
+  height: 400px;
+}
 .nav-link li {
     display: inline-block;
     padding: 0 1rem;
     font-size: 1.5rem;
+    text-align: left;
 }
 .nav-link li a {
-    color: var(--color-white);
-    transition: all .5s ease 0s;
+    color: var(--color-dark);
+    transition: all .3s ease 0s;
+    text-decoration: none;
 }
 .nav-link li a:hover {
     color: var(--color-hotpink);
 }
-.nav-link li a:active {
-    color: var(--color-hotpink);
-}
-/* HEADER END */
-
 #header-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
-    margin: 1rem;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: lightblue;
 }
+#nav-right  {
+  display: inline-block;
+  padding: 0 1 rem;
+
+}
+/* HEADER END */
 
 /* LOGIN FORM BEGIN */
 .form-box {
     position: absolute;
-    top: 80%;
+    top: 70%;
     left: 50%;
     width: 600px;
     padding: 40px;
     transform: translate(-50%, -50%);
     background: var(--color-white);
     border-radius: 30px;
-    -webkit-box-shadow: 35px 5px 30px 20px rgb(55, 161, 194);
-    -moz-box-shadow: 35px 5px 30px 20px rgba(201, 242, 255, 0.945);
-    box-shadow: 15px 5px 30px 20px rgba(58, 63, 65, 0.103);
     height: auto;
+    border: 2px solid var(--color-dark);
 }
 .form-box .form-input {
     position: relative;
@@ -96,39 +150,48 @@ h2 {
     position: absolute;
     top: 0;
     left: 0;
-    font-family: 'Archivo';
     font-weight: 500;
     padding: 10px 0;
     pointer-events: none;
     font-size: medium;
 }
-
+a .active {
+  color: var(--color-hotpink);
+}
 /* Button */
 .btn-nav {
-    margin: 40px auto;    
+    margin: 40px auto;  
+    padding: 1rem 2rem;  
     text-transform: uppercase;
-    background-color: #d2d431;
-    border: 0 solid #E5E7EB;
+    background-color: var(--color-button);
+    border: none;
     color: #000000;
     display: flex;
-    font-family: 'Anton';
-    letter-spacing: 10px;
+    letter-spacing: 5px;
     font-size: 1rem;
     font-weight: lighter;
     justify-content: center;
-    line-height: 1.75rem;
-    padding: 1rem 2rem;
+    line-height: 2rem;
     position: relative;
     text-align: center;
-    text-decoration: none #000000 solid;
-    width: 45%;
-    max-width: 460px;
     position: relative;
     cursor: pointer;
     transform: rotate(-2deg);
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
+}
+#btn-login {
+    width: 45%;
+    max-width: 460px;
+}
+#btn-logout {
+    width: 75%;
+    max-width: 440px;
+    text-decoration: none;
+}
+#btn-logout a:hover{
+  text-decoration: none;
 }
 .btn-nav:focus {
     outline: 0;
@@ -141,10 +204,12 @@ h2 {
     left: 4px;
     width: calc(100% - 10px);
     height: calc(100% - 10px);
+    text-decoration: none;
 }
 .btn-nav:hover:after {
     bottom: 2px;
     left: 2px;
+    text-decoration: none;
 }
 @media (min-width: 768px) {
   .btn-nav {
@@ -154,9 +219,17 @@ h2 {
 }
 
 /* LOGIN FORM END */
+/* LOGIN INFO BEGIN*/
+.login-info {
+  padding: 30px 20px;
+  margin: 20px;
+}
+.area {
+  width: inherit;
+  height: auto;
+}
 
 /* FOOTER */
-
 footer {
     display: flex;
     justify-content: center;
@@ -166,7 +239,15 @@ footer {
     width: 100%;
     max-width: 1400px;
   }
+  footer a {
+    color: var(--color-dark);
+    transition: all .3s ease 0s;
+  }
   #footer-span {
     font-size: 1rem;
     font-weight: 400;
+  }
+  footer a:hover {
+    text-decoration: none;
+    color: var(--color-hotpink);
   }

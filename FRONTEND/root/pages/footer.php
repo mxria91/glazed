@@ -1,47 +1,65 @@
 <footer>
       <div class="footer">
-			<div>
-				<a href="https://www.facebook.com"><img src="assets/img/icon-facebook.png" alt="facebook icon" id="facebook-icon"></a>
-				<a href="https://www.instagram.com"><img src="assets/img/icon-instagram.png" alt="instagram icon" id="instagram-icon"></a>
-			</div>
 			<div>				
 				<span id="footer-span"> 
-					<strong>GLAZED</strong> &copy; EST. 2023 
-					<a href="#" target="_blank">| IMPRESSUM |</a>
+					<strong>GLAZED</strong> &copy; EST. 2023 |
+					<a href="#" target="_blank"> IMPRESSUM </a> |
 					<a href="#" target="_blank">DATENSCHUTZ</a>
 			</span>
 			</div>
 		</div>
     </footer>
+
+
     <!-- Script Begin  -->
-      
-          <script>
-            // Scroll-Effect für Browser die dies nicht unterstützen:
-          $(document).ready(function(){
-            // Add smooth scrolling to all links
-            $("a").on('click', function(event) {
+	<!-- INTERNAL SCRIPTS -->
+		<!-- JQUERY -->
+			<script src="../../lib/jquery/jquery-3.6.4.min.js"></script>
+		<!-- JS -->
+			<script src="../js/script.js"></script>
+	<!-- EXTERNAL SCRIPTS -->
+		<!--  Slider -->
+		<script>
+			const slider = document.querySelector('.slider');
+			const sliderContainer = document.querySelector('.slider-container');
+			const images = Array.from(document.querySelectorAll('.slider-container img'));
 
-              // Make sure this.hash has a value before overriding default behavior
-              if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
+			let currentIndex = 0;
+			const slideWidth = slider.clientWidth;
+			let isTransitioning = false;
 
-                // Store hash
-                var hash = this.hash;
+			function slideTo(index) {
+			if (isTransitioning) return;
 
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                  scrollTop: $(hash).offset().top
-                }, 800, function(){
+			isTransitioning = true;
 
-                  // Add hash (#) to URL when done scrolling (default click behavior)
-                  window.location.hash = hash;
-                });
-              } // End if
-            });
-          });
-          </script>
+			sliderContainer.style.transform = `translateX(-${slideWidth * index}px)`;
+			currentIndex = index;
+
+			// Reset transition after sliding
+			setTimeout(() => {
+				isTransitioning = false;
+				if (currentIndex === 0) {
+				sliderContainer.style.transition = 'none';
+				slideTo(images.length - 2);
+				} else if (currentIndex === images.length) {
+				sliderContainer.style.transition = 'none';
+				slideTo(1);
+				}
+			}, 300);
+			}
+
+			function nextSlide() {
+			slideTo(currentIndex + 1);
+			}
+
+			function previousSlide() {
+			slideTo(currentIndex - 1);
+			}
+
+			setInterval(nextSlide, 3000);
+		  </script>
+			
     <!-- Script End -->
   </body>
 </html>

@@ -1,5 +1,5 @@
+/*  || GENERAL FORMATING */
 * {
-  /* CSS Reset */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,15 +7,14 @@
 }
 
 :root {
-  /* Fonts */
   --font-anton: Anton;
   --font-archivo: Archivo;
   --color-hotpink: #e43da1ef;
   --color-white: #e7dada;
   --color-button: #06c8d9;
+  --color-black: #000;
 }
 
-/* General Formating */
 html, body {
   width: 100vw;
   height: 100vh;
@@ -23,11 +22,59 @@ html, body {
   font-family: var(--font-archivo);
 }
 
+h1 {
+  font-size: 2rem;
+  font-family: "Anton";
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  margin-left: -30%;
+}
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Anton";
+  padding: 30px;
+  margin: 50px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+}
+h3 {
+  font-size: 4rem;
+  font-family: var(--font-anton);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  margin-bottom: 2rem;
+  color: transparent;
+  -webkit-text-stroke: 3px var(--color-white);
+}
 ul li {
   list-style: none;
 }
-
 ul li a,
 a {
   text-decoration: none;
 }
+
+a:link {
+  color: var(--color-black);
+}
+
+a:hover {
+  color: var(--color-hotpink);
+}
+
+/* || FONTS */
+@font-face {
+  font-family: 'Anton';
+  src: url(../root/assets/font/Anton/Anton-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url(../root/assets/font/Archivo/);
+}
+
+

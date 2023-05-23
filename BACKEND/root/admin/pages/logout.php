@@ -5,8 +5,7 @@
     unset($_SESSION["user_pw"]);
     session_unset();
     session_destroy();
-    header("Refresh: 2; URL = login.php;")
-
+    header("Location: login.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +16,6 @@
     <title>GLAZED - Logout from Administration</title>
 </head>
 <body>
-    <h1>LOGOUT</h1>
-    <p>Logout Successful. Bis zum nächsten Mal!</p>
-    <p>
-        <a href="login.php">Weiter zum Login</a>
-    </p>
+
 </body>
 </html>

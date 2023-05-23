@@ -9,7 +9,7 @@ if (isset($_POST)) {
         $error = "Oops, da war wohl was falsch! Probiere es nochmal.";
     } else {
     $sql_user_name = escape($_POST["user_name"]);
-    $result_login = query(" SELECT * FROM admin WHERE user_name='{$sql_user_name}'  ");
+    $result_login = query(" SELECT * FROM admin WHERE user_name='{$sql_user_name}' ");
     $row = mysqli_fetch_assoc($result_login);
     
         // Password Check
@@ -17,6 +17,7 @@ if (isset($_POST)) {
             if (password_verify($_POST["user_pw"], $row["user_pw"])) {
                 $_SESSION["active_login"] = true;
                 $_SESSION["user_name"] = $row["user_name"];
+                $_SESSION["user_last_login"] = $row["user_last_login"];
 
                 query("UPDATE `admin` SET `user_last_login`=NOW() WHERE user_name = '{$row['user_name']}' ");
                 header("Location: index.php");

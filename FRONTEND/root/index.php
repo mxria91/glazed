@@ -1,9 +1,9 @@
 <?php
 
-include "header.php";
-include "navigation.php";
-include "main.php";
-include "menu.php";
-include "footer.php";
+include "pages/header.php";
+include "pages/navigation.php";
+include "pages/hero.php";
+include "pages/menu.php";
+include "pages/footer.php";
 
 ?>

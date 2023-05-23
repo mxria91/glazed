@@ -1,23 +1,6 @@
-<?php
-
-// Create menu items
-$item1 = new MenuItem('Donut Name', '€ 4.99', 'Insert product description');
-$item2 = new MenuItem('Donut Name', '€ 4.99', 'Insert product description');
-$item3 = new MenuItem('Donut Name', '€ 4.99', 'Insert product description');
-$item4 = new MenuItem('Donut Name', '€ 4.99', 'Insert product description');
-
-// Create menu container
-$menu = new MenuContainer(array($item1, $item2, $item3, $item4));
-
-// Generate menu HTML code
-$menu->generate();
-
-?>
-
-<!-- Menu -->
-<section class="menu">
+<section class="menu" id="menu">
 			<!-- Classic Donuts - Begin -->
-			<h2>CLASSIC DONUTS</h2>
+			<h2>classic donuts</h2>
 			<div class="menu-container">
 				<div class="menu-area">
 					<div class="menu-product-donut">
@@ -57,8 +40,9 @@ $menu->generate();
 				</div>
 			</div>
 			<!-- Classic Donuts - End -->
+
 			<!-- Special Donuts - Begin -->
-			<h2>SPECIAL DONUTS</h2>
+			<h2>special donuts</h2>
 			<div class="menu-container">
 				<div class="menu-area">
 					<div class="menu-product-donut">
