@@ -8,16 +8,20 @@ activeUser();
 include "header.php";
 ?>
 
-
+<!-- BEGIN STYLESHEET -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap4.min.css"> 
+<!-- END STYLESHEET -->
 
-<h2>KATEGORIE ÜBERSICHT</h2>
+<!-- BEGIN PAGE HEADING + ACTION BUTTONS -->
+<h2 style="text-align:center;">KATEGORIE ÜBERSICHT</h2>
 <div style="text-align: center; margin-bottom: 60px;">
     <a href="category.php" class="btn btn-success">+ Kategorie Hinzufügen</a>
 </div>
+<!-- END PAGE HEADING + ACTION BUTTONS -->
 
-<div class="container">
+<!-- BEGIN CONTENT -->
+<div class="container"> 
     <div class="row">
         <div class="col-12">
         <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -32,18 +36,23 @@ include "header.php";
             </tr>
         </thead>
         <tbody>
+            <!-- BEGIN DYNAMISCHE GENERIERUNG DER TABELLENINHALTE -->
             <?php
-                $sn = 1;
+                $sn = 1; // Serial Number für jede Kategorie/Table
                 $sql = "SELECT * FROM `category` ORDER BY `id` DESC";
-                $result = $db_connect->query($sql);
-                if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-                        $status = $row['status'];
+                $result = $db_connect->query($sql); // Query Ergebnis in $result 
+                if ($result->num_rows > 0) { // wenn query Ergebnis mehr wie 0 rows -> while loop
+                    while($row = $result->fetch_assoc()) { // jede Row wird iteriert
+                        // Prüfung - nur Kategorien anzeigen die aktiv sind (Status = 1 )
+                        $status = $row['status']; // Kategorie Status wird in $status gespeichert
                         if($status == "1"){
-                            $status = "<b class='text-success'>Active</b>";
+                            $status = "<b class='text-success'>Aktiv</b>"; // $status variable wird an HTML-Code zugewiesen <b class='text-success'>Active</b> Display wird in grün angezeigt
                         }else{
-                            $status = "<b class='text-danger'>Blocked</b>";
-                        }
+                            $status = "<b class='text-danger'>Blockiert</b>";  // ansonsten Display in rot
+                        } 
+                        // Row-Inhalt für folgende Spalten ausgeben:
+                            // Aktion-Links haben verschiedene URLS mit Parameter status und id für category_status update und delete_category 
+                            // Beinhaltet fontawesome Button Styles
                         echo '
                         <tr>
                                 <th>'.$sn.'</th>
@@ -61,11 +70,13 @@ include "header.php";
                     $sn++;}
                 }
             ?>
+            <!-- END DYNAMISCHE GENERIERUNG DER TABELLENINHALTE -->
         </tbody>
     </table>
         </div>
     </div>
 </div>
+<!-- END CONTENT -->
 
 <div class="text-center">
 <?php

@@ -54,7 +54,7 @@ if (isset($_POST)) {
     </nav>
 
     <div class="login-box" >
-        <h2>Administration</h2>
+        <h2 style="text-align:center;">Administration</h2>
         <div class="form-box">
             <!-- FORM LOGIN -->
             <form action="" method="post">

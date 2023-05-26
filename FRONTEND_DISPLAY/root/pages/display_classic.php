@@ -13,12 +13,6 @@ $result = mysqli_query($connection, $query);
     <title>GLAZED - Classic Donuts Display</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../../lib/bootstrap/bootstrap.min.css">
-
-    <style>
-        body {
-            background-image: url(../assets/Videos/doughnut_video.mp4);
-        }
-    </style>
 </head>
 <body class="bg-info">
     <div class="container">

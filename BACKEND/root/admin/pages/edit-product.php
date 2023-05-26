@@ -12,7 +12,7 @@ include "header.php";
 
 
 <?php
-    $p_id = $_GET['id'];
+    $p_id = escape($_GET['id']);
     $sql = "SELECT * FROM `products` ORDER BY  `id`='$p_id'";
     $result = $db_connect->query($sql);
     if ($result->num_rows > 0) {
@@ -30,7 +30,7 @@ include "header.php";
 
 
 
-<h2>Produkt Bearbeiten</h2>
+<h2 style="text-align:center;">Produkt Bearbeiten</h2>
 
 <div class="container">
     <form action="" method="post" enctype="multipart/form-data">
@@ -108,12 +108,12 @@ include "footer.php";
 
 <?php
     if(isset($_POST['submit'])){
-        $category = $_POST['category'];
-        $p_name = $_POST['p_name'];
-        $price = $_POST['price'];
-        $qty = $_POST['qty'];
-        $unit = $_POST['unit'];
-        $description = $_POST['description'];
+        $category = escape($_POST['category']);
+        $p_name = escape($_POST['p_name']);
+        $price = escape($_POST['price']);
+        $qty = escape($_POST['qty']);
+        $unit = escape($_POST['unit']);
+        $description = escape($_POST['description']);
         $p_id = $_GET['id'];
         $img_2 = $_POST['img_2'];
 

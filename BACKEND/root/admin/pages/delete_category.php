@@ -8,7 +8,7 @@
     $c_img = $_GET['img'];
 
     $sql = "DELETE FROM `category` WHERE `id`='$c_id'";
-    unlink('../../assets/img/category/'.$c_img);
+    unlink('../../assets/img/category/'.$c_img); // Bild "unlinken"
     $run = mysqli_query($db_connect, $sql);
     if($run == true){
         echo "<script>window.location.href='view_category.php?status=deleted'</script>";

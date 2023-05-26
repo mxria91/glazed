@@ -8,13 +8,13 @@ activeUser();
 include "header.php";
 ?>
 
-<h2>KATEGORIE HINZUFÜGEN</h2>
+<h2 style="text-align:center;">KATEGORIE HINZUFÜGEN</h2>
 
 <div class="container">
-    <form action="" method="post" enctype="multipart/form-data">
+    <!-- Bei SuperGlobal $_FILES immer enctype="multipart/form-data" verwenden! -->
+    <form action="" method="post" enctype="multipart/form-data"> 
         <div class="row">
             <div class="col-12">
-
             <?php
             error_reporting(0);
                 if($_GET['status']== "true"){
@@ -31,6 +31,7 @@ include "header.php";
             </div>
         </div>
 
+        <!-- BEGIN Form für Aktion: Kategorie Hinzufügen -->
         <div class="row">
             <div class="col-6">
                 <label for="">Kategorie Name</label>
@@ -38,12 +39,13 @@ include "header.php";
             </div>
             <div class="col-6">
                 <label for="">Bild</label>
-                <input type="file" name="img"  class="form-control">
+                <input type="file" name="img" class="form-control">
             </div>
             <div class="col-12 text-center">
                 <input type="submit" name="submit" value="ANLAGE BESTÄTIGEN" class="btn btn-warning mt-5 " style="width:200px;">
             </div>
         </form>
+        <!-- END Form für Aktion: Kategorie Hinzufügen -->
 
     </div>
 </div>
@@ -54,21 +56,26 @@ include "header.php";
 include "footer.php";
 ?></div>
 
+<!-- BEGIN: FORM HANDLER VALIDIERUNG -->
 <?php
     if(isset($_POST['submit'])){
 
-        $c_name = $_POST['c_name'];
-
+        // Abruf der Form-Daten
+        $c_name = escape($_POST['c_name']);
         $img = $_FILES["img"]["name"];
         $tempname = $_FILES["img"]["tmp_name"];
+
+        // Generierung einer neuen Filename
         $img = 'category-'.rand().'.png';
         $folder1 = "../../assets/img/category/".$img;
-        move_uploaded_file($tempname, $folder1);
+        move_uploaded_file($tempname, $folder1); // Verschieben der Datei von temporärer Location
 
+        // SQL INSERT query an DB
         $date = date('m-d-Y');
-        $sql = "INSERT INTO `category`(`name`, `img`, `date`, `status`) VALUES ('$c_name', '$img', '$date', '1')";
+        $sql = "INSERT INTO `category`(`name`, `img`, `date`, `status`) VALUES ('$c_name', '$img', '$date', '1')"; // Übergabe Status = 1 (aktiv)
         $run = mysqli_query($db_connect, $sql);
-        if($run == true){
+        if($run == true){ 
+            // Wann query erfolgreich - dann Navigierung an angeführte Location mit query Parameter status=true
             echo "<script>window.location.href='category.php?status=true'</script>";
             //header('Location: category.php')
         }else{
@@ -76,3 +83,4 @@ include "footer.php";
         }
     }
 ?>
+<!-- ENDE: FORM HANDLER VALIDIERUNG -->

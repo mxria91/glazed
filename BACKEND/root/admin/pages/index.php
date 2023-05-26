@@ -9,7 +9,7 @@ include "header.php";
 ?>
 
 <div class="area">
-    <h2>WILLKOMMEN IM ADMIN-BEREICH</h2>
+    <h2 id="header-index">WILLKOMMEN IM ADMIN-BEREICH</h2>
     
     <div class="login-info">
         <span><strong>USER:</strong> <?php echo $_SESSION['user_name'];?></span><br>

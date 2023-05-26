@@ -16,8 +16,8 @@
         <nav id="header-nav">
             <ul class="nav-link">
                 <li><a href="index.php" class="active">HOMEPAGE</a></li>
-                <li><a href="product.php">PRODUCTS</a></li>
-                <li><a href="category.php">ADD CATEGORY</a></li>
+                <li><a href="product.php">PRODUKTE</a></li>
+                <li><a href="view_category.php">KATEGORIE</a></li>
             </ul>
             <a href="logout.php"><button class="btn-nav" id="logout-btn">LOGOUT</button></a>
         </nav>

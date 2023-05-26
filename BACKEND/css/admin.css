@@ -63,10 +63,18 @@ h1 {
 h2 {
   font-size: 3rem;
   font-weight: lighter;
+  text-align: center;
   padding: 30px 20px;
   margin: 20px;
   letter-spacing: 10px;
   text-transform: uppercase;
+  font-family: 'roboto';
+}
+#header-index {
+  text-align: left;
+  padding: 30px 20px;
+  margin: 20px;
+  letter-spacing: 10px;
   font-family: 'roboto';
 }
 h3 {

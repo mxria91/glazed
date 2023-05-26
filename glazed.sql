@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2023 at 12:28 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Erstellungszeit: 27. Mai 2023 um 01:38
+-- Server-Version: 10.4.27-MariaDB
+-- PHP-Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `glazed`
+-- Datenbank: `glazed`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Tabellenstruktur für Tabelle `admin`
 --
 
 CREATE TABLE `admin` (
@@ -32,21 +32,21 @@ CREATE TABLE `admin` (
   `user_pw` varchar(255) NOT NULL,
   `user_last_login` datetime DEFAULT NULL,
   `user_name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admin`
+-- Daten für Tabelle `admin`
 --
 
 INSERT INTO `admin` (`user_id`, `user_pw`, `user_last_login`, `user_name`) VALUES
-(1, '$2y$10$SWDEPcSeCZp.vJBoi6bpseiE8sX/VIhrCJS6V3WQMgArcUYKUjr7m', '2023-05-15 14:05:51', 'mary'),
+(1, '$2y$10$SWDEPcSeCZp.vJBoi6bpseiE8sX/VIhrCJS6V3WQMgArcUYKUjr7m', '2023-05-27 01:31:06', 'mary'),
 (2, 'frank123', NULL, 'frank'),
 (3, 'michi123', NULL, 'michi');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Tabellenstruktur für Tabelle `category`
 --
 
 CREATE TABLE `category` (
@@ -55,48 +55,22 @@ CREATE TABLE `category` (
   `img` varchar(225) NOT NULL,
   `date` varchar(2225) NOT NULL,
   `status` varchar(225) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `category`
+-- Daten für Tabelle `category`
 --
 
 INSERT INTO `category` (`id`, `name`, `img`, `date`, `status`) VALUES
-(6, 'Electronic', 'category-963092149.png', '05-15-2023', '1'),
-(7, 'Food', 'category-1605798713.png', '05-15-2023', '1');
+(19, 'Cronuts', 'category-727156162.png', '05-22-2023', '1'),
+(20, 'Gefüllt', 'category-1048411907.png', '05-22-2023', '1'),
+(21, 'Ungefüllt', 'category-2129292627.png', '05-22-2023', '1'),
+(22, 'Specials', 'category-1016036384.png', '05-22-2023', '1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `items_classic`
---
-
-CREATE TABLE `items_classic` (
-  `product_id` int(255) NOT NULL,
-  `product_name` varchar(190) NOT NULL,
-  `product_description` text NOT NULL,
-  `product_price` decimal(10,0) NOT NULL,
-  `product_date` date DEFAULT NULL COMMENT 'Erfassungsdatum vom Produkt'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `items_special`
---
-
-CREATE TABLE `items_special` (
-  `product_id` int(11) NOT NULL,
-  `product_name` varchar(190) NOT NULL,
-  `product_description` text NOT NULL,
-  `product_price` decimal(10,0) NOT NULL,
-  `product_date` date DEFAULT NULL COMMENT 'Erfassungsdatum vom Produkt'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `products`
+-- Tabellenstruktur für Tabelle `products`
 --
 
 CREATE TABLE `products` (
@@ -109,87 +83,66 @@ CREATE TABLE `products` (
   `image` varchar(225) NOT NULL,
   `description` varchar(1000) NOT NULL,
   `date` date NOT NULL,
-  `status` varchar(225) NOT NULL,
-  `sorting` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `status` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `products`
+-- Daten für Tabelle `products`
 --
 
-INSERT INTO `products` (`id`, `category`, `name`, `price`, `quantity`, `unit`, `image`, `description`, `date`, `status`, `sorting`) VALUES
-(1, '6', 'Brown Cookies', 30.35, 30, '30', 'product-1705140506.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '0000-00-00', '1', ''),
-(2, '6', 'Scaner', 60.5, 25, '', 'product-989126354.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2023-05-15', '1', ''),
-(3, '7', 'Brownies', 40.25, 60, '', 'product-1614171231.png', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', '2023-05-15', '1', '');
+INSERT INTO `products` (`id`, `category`, `name`, `price`, `quantity`, `unit`, `image`, `description`, `date`, `status`) VALUES
+(13, '21', 'Classic Cinnamon', 1.9, 1, 'Stück', 'product-1824052090.png', 'mit Zimtzucker', '2023-05-23', '1'),
+(14, '21', 'Classic Sugar', 1.9, 1, 'Stück', 'product-1057942870.png', 'mit Zuckerglasur', '2023-05-23', '1'),
+(15, '21', 'Black & White', 1.9, 1, 'Stück', 'product-800721000.png', 'mit Zuckerglasur und Schokolade', '2023-05-23', '1'),
+(16, '22', 'Brownie Coffee', 2.4, 1, 'Stück', 'product-296752852.png', 'mit Brownies und Kaffeeglasur', '2023-05-23', '1'),
+(17, '22', 'Cookie Dough', 2.4, 1, 'Stück', 'product-1637524223.png', 'mit Caramelstückchen, Popcorn und Schokolade', '2023-05-23', '1'),
+(18, '22', 'Raspberry Vanilla', 2.4, 1, 'Stück', 'product-1693917134.png', 'mit Himbeere und Vanillecreme', '2023-05-23', '1'),
+(19, '19', 'Blueberry Chocolate ', 2.2, 1, 'Stück', 'product-791213267.png', 'mit Heidelbeeren und Schokolade', '2023-05-25', '1');
 
 --
--- Indexes for dumped tables
+-- Indizes der exportierten Tabellen
 --
 
 --
--- Indexes for table `admin`
+-- Indizes für die Tabelle `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `user_name` (`user_name`);
 
 --
--- Indexes for table `category`
+-- Indizes für die Tabelle `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `items_classic`
---
-ALTER TABLE `items_classic`
-  ADD UNIQUE KEY `product_id` (`product_id`);
-
---
--- Indexes for table `items_special`
---
-ALTER TABLE `items_special`
-  ADD UNIQUE KEY `product_id` (`product_id`);
-
---
--- Indexes for table `products`
+-- Indizes für die Tabelle `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT für exportierte Tabellen
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT für Tabelle `admin`
 --
 ALTER TABLE `admin`
   MODIFY `user_id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `category`
+-- AUTO_INCREMENT für Tabelle `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT for table `items_classic`
---
-ALTER TABLE `items_classic`
-  MODIFY `product_id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `items_special`
---
-ALTER TABLE `items_special`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT für Tabelle `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
